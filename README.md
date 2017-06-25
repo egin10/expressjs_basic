@@ -1,6 +1,8 @@
 # expressjs_basic
 learn basic of expressjs
 
+try mvc data static (array JSON)
+
 1. clone : `git clone https://github.com/egin10/expressjs_basic.git`
 
 2. move to dir expressjs_basic
