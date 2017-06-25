@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+{% block title %} Books Page {% endblock %}
+{% block content %}
+	<h2>Books</h2>
+	<ul>
+		{% for d in data %}
+		<li>{{d.id}} - {{d.judul}}</li>
+		{% endfor %}
+	</ul>
+	<a href="/">Home</a>
+{% endblock %}
