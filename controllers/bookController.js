@@ -58,8 +58,12 @@ var Books = {
 		res.redirect('/books');
 	},
 	deleteBook : function(req, res){
-		index = req.params.id - 1;
-		dataBooks.splice(index, 1);
+		if(dataBooks.length == 1){
+			dataBooks.splice(0, 1);	
+		}else{
+			index = req.params.id - 1;
+			dataBooks.splice(index, 1);
+		}
 		res.redirect('/books');
 	},
 };
