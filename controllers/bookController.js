@@ -14,13 +14,14 @@ var Books = {
 		res.render('addBook');
 	},
 	addBookPost : function(req, res){
-		var newJudul = req.body.judul;
-		var newQty = req.body.qty;
-		dataBooks.push({
+		var newBooks = {
 			id : dataBooks.length + 1,
-			judul : newJudul,
-			qty : newQty
-		});
+			judul : req.body.judul,
+			qty : req.body.qty
+		};
+		//add data to dataBooks
+		dataBooks.push(newBooks);
+		console.log(newBooks);
 		res.redirect('/books');
 	},
 };

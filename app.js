@@ -8,12 +8,12 @@ var app = express();
 //=================== DEFINE VIEW ENGINE
 app.engine('html', view.renderFile); //define module view engine using swig
 app.set('view engine', 'html'); //setting module view engine with html from app.egin('html', view engine)
-app.set('views', path.join(__dirname, '/views')); //define view dir
+app.set('views', path.join(__dirname + '/views')); //define view dir
 
 //use public source : bootstarp || static file
 app.use(express.static(path.join(__dirname, 'bower_components')));
 //use body-parser
-app.use(bodyParser());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 //=================== ROUTER
 var routing = {
