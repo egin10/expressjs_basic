@@ -16,14 +16,15 @@ var Books = {
 		res.render('addBook');
 	},
 	addBookPost : function(req, res){
+		var lastIndex = dataBooks.length - 1;
+		var lastID = dataBooks[lastIndex].id;
 		var newBooks = {
-			id : dataBooks.length + 1,
+			id : lastID + 1,
 			judul : req.body.judul,
 			qty : req.body.qty
 		};
-		//add data to dataBooks
+		// add data to dataBooks
 		dataBooks.push(newBooks);
-		console.log(newBooks);
 		res.redirect('/books');
 	},
 	editBookGet : function(req, res){
@@ -47,6 +48,11 @@ var Books = {
 		}
 		//update data to dataBooks
 		dataBooks[index] = newData;
+		res.redirect('/books');
+	},
+	deleteBook : function(req, res){
+		index = req.params.id - 1;
+		dataBooks.splice(index, 1);
 		res.redirect('/books');
 	},
 };
