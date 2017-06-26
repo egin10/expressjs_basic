@@ -4,6 +4,8 @@ var dataBooks = [
 	{ id : 3, judul : "Belajar ExpressJs", qty : 1},
 ];
 
+var index = ""; //variable index
+
 var Books = {
 	listBooks : function(req, res){
 		res.render('books', { 
@@ -22,6 +24,29 @@ var Books = {
 		//add data to dataBooks
 		dataBooks.push(newBooks);
 		console.log(newBooks);
+		res.redirect('/books');
+	},
+	editBookGet : function(req, res){
+		//find Index from Array
+		index = req.params.id - 1;
+
+		var data = {
+			id : dataBooks[index].id,
+			judul : dataBooks[index].judul,
+			qty : dataBooks[index].qty,
+		};
+		res.render('editBook', {
+			data : data
+		});
+	},
+	editBookPost : function(req, res){
+		var newData = {
+			id : dataBooks[index].id,
+			judul : req.body.judul,
+			qty : req.body.qty
+		}
+		//update data to dataBooks
+		dataBooks[index] = newData;
 		res.redirect('/books');
 	},
 };
