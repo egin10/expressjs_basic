@@ -11,7 +11,10 @@ app.set('view engine', 'html'); //setting module view engine with html from app.
 app.set('views', path.join(__dirname + '/views')); //define view dir
 
 //use public source : bootstarp || static file
-// app.use('/', express.static(path.join(__dirname, 'public/bootstarp')));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use('/books', express.static(path.join(__dirname, 'public')));
+app.use('/books/edit', express.static(path.join(__dirname, 'public')));
+app.use('/movies', express.static(path.join(__dirname, 'public')));
 
 //use body-parser
 app.use(bodyParser.urlencoded({ extended: true }));

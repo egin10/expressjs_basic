@@ -16,8 +16,15 @@ var Books = {
 		res.render('addBook');
 	},
 	addBookPost : function(req, res){
-		var lastIndex = dataBooks.length - 1;
-		var lastID = dataBooks[lastIndex].id;
+		var lastIndex = "";
+		var lastID = "";
+		if( dataBooks.length != 0 ){
+			lastIndex = dataBooks.length - 1;
+			lastID = dataBooks[lastIndex].id;
+		}else{
+			lastID = 0;
+		}
+		
 		var newBooks = {
 			id : lastID + 1,
 			judul : req.body.judul,
