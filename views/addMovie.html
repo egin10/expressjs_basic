@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+{% block title %} Add Movie|App Store {% endblock %}
+{% block content %}
+		<h2>Add New Movie</h2>
+			<form method="post" action="/movies/add">
+				<div class="form-group">
+					<label>Judul</label>
+					<input type="text" name="judul" class="form-control" />	
+				</div>
+				<div class="form-group">
+					<label>Tahun</label>
+					<input type="text" name="year" class="form-control" />	
+				</div>
+				<div class="form-group">
+					<input type="submit" class="btn btn-success" value="Submit" />
+					<a href="/movies" class="btn btn-danger">Back</a>
+				</div>
+			</form>
+{% endblock %}

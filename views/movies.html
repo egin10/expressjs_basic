@@ -1,13 +1,14 @@
 {% extends 'layout.html' %}
 {% block title %} List|App Store {% endblock %}
 {% block content %}
-		<h2>List Books</h2>
+		<h2>List Movies</h2>
 			<table class="table table-responsive">
 				<thead>
-					<tr bgcolor="yellow">
+					<tr bgcolor="yellow" align="center">
 						<td><b>ID</b></td>
 						<td><b>Judul</b></td>
-						<td><b>Qty</b></td>
+						<td><b>Tahun</b></td>
+						<td><b>Action</b></td>
 					</tr>
 				</thead>
 				<tbody>
@@ -15,7 +16,11 @@
 					<tr>
 						<td>{{ d.id }}</td>
 						<td>{{ d.judul }}</td>
-						<td>{{ d.qty }}</td>
+						<td align="center">{{ d.year }}</td>
+						<td align="center">
+							<a href="/movies/edit/{{ d.id }}" class="btn btn-warning">Edit</a>
+							<a href="/movies/delete/{{ d.id }}" class="btn btn-danger">Delete</a>
+						</td>
 					</tr>
 					{% endfor %}
 				</tbody>
@@ -23,5 +28,6 @@
 			<p>
 				<br/>
 				<a href="/" class="btn btn-primary">Home</a>
+				<a href="/movies/add" class="btn btn-success">Add New</a>
 			</p>
 {% endblock %}

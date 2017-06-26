@@ -6,7 +6,7 @@ var dataBooks = [
 
 var index = ""; //variable index
 
-var Books = {
+var bookController = {
 	listBooks : function(req, res){
 		res.render('books', { 
 			data : dataBooks
@@ -68,4 +68,4 @@ var Books = {
 	},
 };
 
-module.exports.bookController = Books;
+module.exports.bookController = bookController;
