@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 //add controller
-var movieController = require('./../controllers/movieController').movieController;
+var movieController = require('./../controllers/movieController');
 
 //index | list
 router.get('/', movieController.listMovies);

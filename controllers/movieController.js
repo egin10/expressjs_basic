@@ -63,4 +63,4 @@ var movieController = {
 	},
 };
 
-module.exports.movieController = movieController;
+module.exports = movieController;

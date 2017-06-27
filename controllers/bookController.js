@@ -68,4 +68,4 @@ var bookController = {
 	},
 };
 
-module.exports.bookController = bookController;
+module.exports = bookController;
