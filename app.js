@@ -18,7 +18,7 @@ app.set('views', path.join(__dirname + '/views')); //define view dir
 app.use(require('./static'));
 
 //use body-parser
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 //=================== ROUTER
 var routing = {
